@@ -6,12 +6,12 @@
         <td>
             <img :src="r.image" class="w-20" alt="">
         </td>
-        <td>{{r.firstName +" " + r.lastName}}</td>
-        <td>{{r.email}}</td>
-        <td>{{r.username}}</td>
-        <td>{{r.phone}}</td>
-        <td>
-            <button @click="deleteUser(index)" class="delete" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg"
+        <td class="text-center">{{r.firstName +" " + r.lastName}}</td>
+        <td class="text-center">{{r.email}}</td>
+        <td class="text-center">{{r.username}}</td>
+        <td class="text-center">{{r.phone}}</td>
+        <td >
+            <button class="delete ml-28"  @click="deleteUser(index)" data-toggle="modal"><svg xmlns="http://www.w3.org/2000/svg"
                      fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
