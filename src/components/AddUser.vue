@@ -86,20 +86,12 @@ export default {
             fetch(`https://dummyjson.com/users/add`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    image: newrow.image,
-                    firstName: newrow.firstName,
-                    lastName: newrow.lastName,
-                    email: newrow.email,
-                    phone: newrow.phone
+                   newrow
                 }),
             }).then(res => {
                 if (res.ok) {
                     console.log({
-                        image: newrow.image,
-                        firstName: newrow.firstName,
-                        lastName: newrow.lastName,
-                        email: newrow.email,
-                        phone: newrow.phone
+                       newrow
                     });
                 }
             })
@@ -108,5 +100,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
 </style>
