@@ -7,28 +7,28 @@
             <div>
                 <label>Firstname</label>
                 <input type="text" v-model="addName"
-                    class="  w-full py-1 px-2 mb-1 text-green-800  border border-gray-200 rounded" required>
+                    class="  w-full py-1 px-2 mb-1  border border-green-900 rounded" required>
                 <label>Lastname</label>
                 <input type="text" v-model="addLastName"
-                    class="block  w-full py-1 px-2 mb-1 text-green-800  border border-gray-200 rounded" required>
+                    class="block  w-full py-1 px-2 mb-1  border border-green-900 rounded" required>
             </div>
             <div>
                 <label>Email</label>
                 <input type="email" v-bind:value="addEmail" @input="Email"
-                    class=" w-full py-1 px-2 mb-1 text-gray-800 border border-gray-200 rounded"  required>
+                    class=" w-full py-1 px-2 mb-1  border border-green-900 rounded"  required>
                   
             </div>
             <div>
                 <label>Username</label>
                 <input type="text" v-model="addUsername"
-                    class="block  text-green-800 appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                    class="block  w-full py-1 px-2 mb-1 text-base  border border-green-900 rounded"
                     required>
             </div>
             <div>
                 <label>Phone</label>
                 <div class="flex">
                 <span>+</span>
-                <input type="text" class=" w-full py-1 px-2 mb-1 text-base  bg-white text-gray-800 border border-gray-200 rounded" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"   pattern="\d*"  minlength="12" maxlength="12"  v-bind:value="addPhone" @input="Phone"  placeholder="1234 1234 1234 " required>
+                <input type="text" class=" w-full py-1 px-2 mb-1 text-base border border-green-800 rounded" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"   pattern="\d*"  minlength="12" maxlength="12"  v-bind:value="addPhone" @input="Phone"  placeholder="1234 1234 1234 " required>
                
                 </div>
             </div>
@@ -43,7 +43,6 @@
 </template>
 <script>
 import router from '@/router';
-
 export default {
     name: 'AddUser',
     data() {
@@ -64,18 +63,18 @@ export default {
             this.addEmail=event.target.value;
             const reg=/^([a-zA-Z0-9/._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
             if(reg.test(this.addEmail)){
-                event.target.style.color="green"
+                event.target.style='border: 1px solid green;'
             }
             else{
-                event.target.style.color="red"
+                event.target.style="border: 2px solid red;"
             }
         },
         Phone(event){
             this.addPhone=event.target.value;
             if(this.addPhone.length<12){
-                event.target.style.color="red"}
+                event.target.style="border: 2px solid red;"}
             else{
-                event.target.style.color="green"
+                event.target.style='border: 1px solid green;'
             }
         },
         cancel(){
