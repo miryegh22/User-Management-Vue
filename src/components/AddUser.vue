@@ -35,13 +35,15 @@
         </div>
         <div class="flex justify-center gap-4 mt-2">
             <router-link to="/" class="mt-1">Cancel</router-link>
-            <router-link :to="{ name: 'home' }" class=" text-center  py-1 px-3  bg-green-500 text-white hover:green-600"
+            <button  class=" text-center  py-1 px-3  bg-green-500 text-white hover:green-600"
                 @click="add" >Add
-            </router-link>
+            </button>
         </div>
     </form>
 </template>
 <script>
+import router from '@/router';
+
 export default {
     name: 'AddUser',
     data() {
@@ -77,8 +79,9 @@ export default {
             }
         },
          add() {
-            const reg=/^([a-zA-Z0-9/._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
-            if(this.addName.length!=0 && this.addLastName.length!=0 && reg.test(this.addEmail) && this.addUsername.length!=0 && this.addPhone.length===12){
+          
+            if(this.addName.length!=0 && this.addLastName.length!=0 && this.addUsername.length!=0 && this.addPhone.length===12){
+                router.replace({path:'/'})
             const newrow = { image: "https://robohash.org/GDZ.png?set=set2", firstName: this.addName, lastName: this.addLastName, email: this.addEmail, username: this.addUsername, phone:'+'+ this.addPhone };
             const user = JSON.parse(localStorage.getItem("userTable"));
             user.push(newrow);
