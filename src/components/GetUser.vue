@@ -1,5 +1,5 @@
 <template>
-    <tr v-for="r,index in root">
+    <tr v-for="r,index in root" :key="index">
         <td>
             {{index+1}}
         </td>
