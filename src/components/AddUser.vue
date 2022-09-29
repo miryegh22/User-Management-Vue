@@ -48,14 +48,11 @@ export default {
     name: 'AddUser',
     data() {
         return {
-            newUsers: [],
             addLastName: '',
             addName: '',
             addEmail: '',
             addUsername: '',
-            addPhone: '',
-
-
+            addPhone: ''
         }
     },
 
