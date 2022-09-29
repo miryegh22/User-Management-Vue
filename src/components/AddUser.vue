@@ -52,15 +52,14 @@ export default {
             addName: '',
             addEmail: '',
             addUsername: '',
-            addPhone: ''
+            addPhone: '',
+            reg:/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
         }
     },
-
     methods: {
         Email(event) {
             this.addEmail = event.target.value;
-            const reg =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            if (reg.test(this.addEmail)) {
+            if (this.reg.test(this.addEmail)) {
                 event.target.style = 'border: 1px solid green;'
             }
             else {
@@ -80,8 +79,7 @@ export default {
             router.replace({ path: '/' })
         },
         add() {
-            const reg =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            if (this.addName.length != 0 && this.addLastName.length != 0 && reg.test(this.addEmail) && this.addUsername.length != 0 && this.addPhone.length === 12) {
+            if (this.addName.length != 0 && this.addLastName.length != 0 && this.reg.test(this.addEmail) && this.addUsername.length != 0 && this.addPhone.length === 12) {
                 router.replace({ path: '/' })
                 const newrow = { image: "https://robohash.org/GDZ.png?set=set2", firstName: this.addName, lastName: this.addLastName, email: this.addEmail, username: this.addUsername, phone: '+' + this.addPhone };
                 const user = JSON.parse(localStorage.getItem("userTable"));
