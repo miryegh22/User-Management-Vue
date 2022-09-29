@@ -29,7 +29,7 @@
                     <span>+</span>
                     <input type="text" class=" w-full py-1 px-2 mb-1 text-base border border-green-800 rounded"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                        pattern="\d*" minlength="12" maxlength="12" v-bind:value="addPhone" @input="Phone"
+                        pattern="\d*" minlength="12" maxlength="12" v-model="addPhone" @input="Phone"
                         placeholder="1234 1234 1234 " required>
 
                 </div>
